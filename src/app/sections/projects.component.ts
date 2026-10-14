@@ -75,6 +75,23 @@ import { SectionHeadingComponent } from '../ui/section-heading.component';
               }
             </ul>
           </div>
+          @if (project().links; as links) {
+            <ul class="flex flex-wrap gap-3" aria-label="Project links">
+              @for (l of links; track l.href) {
+                <li>
+                  <a
+                    [href]="l.href"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 rounded-full border border-accent/40 px-4 py-1.5 text-sm font-medium text-accent hover:bg-accent/10"
+                  >
+                    {{ l.label }}
+                    <app-icon name="arrow-up-right" [size]="14" />
+                  </a>
+                </li>
+              }
+            </ul>
+          }
           <ul class="flex flex-wrap gap-2" aria-label="Technologies used">
             @for (t of project().stack; track t) {
               <li class="rounded-full bg-accent/10 px-3 py-1 font-mono text-xs text-accent">{{ t }}</li>

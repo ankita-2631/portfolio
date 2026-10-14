@@ -123,6 +123,7 @@ export interface Project {
   approach: string[]
   outcomes: string[]
   flow: string[]
+  links?: { label: string; href: string }[]
 }
 
 export const projects: Project[] = [
@@ -183,6 +184,10 @@ export const projects: Project[] = [
       'Accessible, responsive experience with a one-push deploy to GitHub Pages or Azure Static Web Apps.',
     ],
     flow: ['content.ts data', 'Angular components', 'Tailwind + Motion UI', 'GitHub Actions deploy'],
+    links: [
+      { label: 'Live site', href: 'https://delightful-stone-02feeee10.2.azurestaticapps.net' },
+      { label: 'Source code', href: 'https://github.com/ankita-2631/portfolio' },
+    ],
   },
 ]
 
